@@ -1,64 +1,13 @@
 <div>
   <div>
     <h1>
-      List of all nominees
+      List of All Nominees
     </h1>
   </div>
 </div>
 
-<hr>
 
-<div>
-  <div>
-    <h2>
-      Add a new nominee
-    </h2>
 
-    <form action="/insert_nominee" method="post">
-      <div>
-        <label for="nom_name_box">
-          Nom name
-        </label>
-
-        <input type="text" id="nom_name_box" name="query_nom_name">
-      </div>
-
-      <div>
-        <label for="ceremony_year_box">
-          Ceremony year
-        </label>
-
-        <input type="datetime-local" id="ceremony_year_box" name="query_ceremony_year">
-      </div>
-
-      <div>
-        <label for="category_box">
-          Category
-        </label>
-
-        <input type="text" id="category_box" name="query_category">
-      </div>
-
-      <div>
-        <input type="checkbox" id="winner_box" name="query_winner" value="1">
-
-        <label for="winner_box">Winner</label>
-      </div>
-
-      <div>
-        <label for="ballots_count_box">
-          Ballots count
-        </label>
-
-        <input type="text" id="ballots_count_box" name="query_ballots_count">
-      </div>
-
-      <button>
-        Create nominee
-      </button>
-    </form>
-  </div>
-</div>
 
 <hr>
 <div>
@@ -66,11 +15,7 @@
     <table>
       <tr>
         <th>
-          Nom name
-        </th>
-
-        <th>
-          Ceremony year
+          Nominee
         </th>
 
         <th>
@@ -78,19 +23,11 @@
         </th>
 
         <th>
-          Winner
+          Ceremony Year
         </th>
 
         <th>
-          Ballots count
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
+          Winner?
         </th>
 
         <th>
@@ -104,26 +41,17 @@
         </td>
 
         <td>
-          <%= a_nominee.ceremony_year %>
-        </td>
-
-        <td>
           <%= a_nominee.category %>
         </td>
 
         <td>
-          <%= a_nominee.winner %>
+          <%= a_nominee.ceremony_year %>
         </td>
 
         <td>
-          <%= a_nominee.ballots_count %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_nominee.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_nominee.updated_at) %> ago
+          <% if a_nominee.winner %>
+          <%= "WINNER" %>
+          <% end %>
         </td>
 
         <td>

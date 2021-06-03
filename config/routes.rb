@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # Routes for the Nominee resource:
 
   # CREATE
-  post("/insert_nominee", { :controller => "nominees", :action => "create" })
+  #post("/insert_nominee", { :controller => "nominees", :action => "create" })
           
   # READ
   get("/nominees", { :controller => "nominees", :action => "index" })

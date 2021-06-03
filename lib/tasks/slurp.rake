@@ -1,8 +1,9 @@
 namespace :slurp do
-  desc "TODO"
-  task the_oscars_abridged: :environment do
+  desc "Load all historical Oscar nominees"
+  task load_noms: :environment do
   
   require "csv"
+  require "date"
 
   oscars_b8_data = File.read(Rails.root.join("lib","csvs","the_oscars_abridged.csv"))
   #puts oscars_b8_data
@@ -13,7 +14,7 @@ namespace :slurp do
   csv.each do |row|
     n = Nominee.new
     n.category = row["category"]
-    n.ceremony_year = row["ceremony_year"]
+    n.ceremony_year = Date.new(row["ceremony_year"].to_i).year
     n.winner = row["winner"]
 
     people_cat = ["ACTOR","ACTRESS","ACTOR IN A LEADING ROLE", "ACTRESS IN A LEADING ROLE","ACTOR IN A SUPPORTING ROLE", "ACTRESS IN A SUPPORTING ROLE","DIRECTING","DIRECTING (Comedy Picture)","DIRECTING (Drama Picture)"]

@@ -8,6 +8,10 @@ class ApplicationController < ActionController::Base
     render({ :template => "home/index.html.erb" })
   end
 
+  def strategies
+    render({ :template => "home/strategies.html.erb" })
+  end
+
   def load_current_user
     the_id = session[:user_id]
     @current_user = User.where({ :id => the_id }).first

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  # HOMEPAGE
+  # Overview Pages
 
   get("/", { :controller => "application", :action => "index" })
+  get("/strategies", { :controller => "application", :action => "strategies" })
 
   # Routes for the Nominee resource:
 

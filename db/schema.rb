@@ -10,6 +10,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2021_06_03_165339) do
+
+  create_table "ballots", force: :cascade do |t|
+    t.datetime "ceremony_year"
+    t.integer "user_id"
+    t.integer "actor_id"
+    t.integer "actress_id"
+    t.integer "s_actor_id"
+    t.integer "s_actress_id"
+    t.integer "director_id"
+    t.integer "o_screenplay_id"
+    t.integer "a_screenplay_id"
+    t.integer "picture_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "nominees", force: :cascade do |t|
+    t.string "nom_name"
+    t.datetime "ceremony_year"
+    t.string "category"
+    t.boolean "winner"
+    t.integer "ballots_count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password_digest"
+    t.string "username"
+    t.integer "ballots_count"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end

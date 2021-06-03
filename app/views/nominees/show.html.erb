@@ -1,0 +1,132 @@
+<div>
+  <div>
+    <h1>
+      Nominee #<%= @the_nominee.id %> details
+    </h1>
+
+    <div>
+      <div>
+        <a href="/nominees">
+          Go back
+        </a>
+      </div>
+
+      <div>
+        <a href="/delete_nominee/<%= @the_nominee.id %>">
+          Delete nominee
+        </a>
+      </div>
+    </div>
+
+    <dl>
+      <dt>
+        Nom name
+      </dt>
+      <dd>
+        <%= @the_nominee.nom_name %>
+      </dd>
+
+      <dt>
+        Ceremony year
+      </dt>
+      <dd>
+        <%= @the_nominee.ceremony_year %>
+      </dd>
+
+      <dt>
+        Category
+      </dt>
+      <dd>
+        <%= @the_nominee.category %>
+      </dd>
+
+      <dt>
+        Winner
+      </dt>
+      <dd>
+        <%= @the_nominee.winner %>
+      </dd>
+
+      <dt>
+        Ballots count
+      </dt>
+      <dd>
+        <%= @the_nominee.ballots_count %>
+      </dd>
+
+      <dt>
+        Created at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_nominee.created_at) %> ago
+      </dd>
+
+      <dt>
+        Updated at
+      </dt>
+      <dd>
+        <%= time_ago_in_words(@the_nominee.updated_at) %> ago
+      </dd>
+    </dl>
+  </div>
+</div>
+
+<hr>
+
+
+<div>
+  <div>
+    <h2>
+      Edit nominee
+    </h2>
+
+    <form action="/modify_nominee/<%= @the_nominee.id %>"  method="post" >
+      <div>
+        <label for="nom_name_box">
+          Nom name
+        </label>
+
+        <input type="text" id="nom_name_box" name="query_nom_name" value="<%= @the_nominee.nom_name %>">
+      </div>
+
+      <div>
+        <label for="ceremony_year_box">
+          Ceremony year
+        </label>
+
+        <input type="datetime-local" id="ceremony_year_box" name="query_ceremony_year"
+         value="<%= @the_nominee.ceremony_year %>">
+      </div>
+
+      <div>
+        <label for="category_box">
+          Category
+        </label>
+
+        <input type="text" id="category_box" name="query_category" value="<%= @the_nominee.category %>">
+      </div>
+
+      <div>
+        <input type="checkbox" id="winner_box" name="query_winner" value="1" <%= "checked" if @the_nominee.winner %>>
+
+        <label for="winner_box">
+            Winner
+        </label>
+      </div>
+
+      <div>
+        <label for="ballots_count_box">
+          Ballots count
+        </label>
+
+        <input type="text" id="ballots_count_box" name="query_ballots_count" value="<%= @the_nominee.ballots_count %>">
+      </div>
+
+      <button>
+        Update nominee
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>

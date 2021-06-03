@@ -1,0 +1,230 @@
+<div>
+  <div>
+    <h1>
+      List of all ballots
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new ballot
+    </h2>
+
+    <form action="/insert_ballot" method="post">
+      <div>
+        <label for="ceremony_year_box">
+          Ceremony year
+        </label>
+
+        <input type="datetime-local" id="ceremony_year_box" name="query_ceremony_year">
+      </div>
+
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="actor_id_box">
+          Actor
+        </label>
+
+        <input type="text" id="actor_id_box" name="query_actor_id">
+      </div>
+
+      <div>
+        <label for="actress_id_box">
+          Actress
+        </label>
+
+        <input type="text" id="actress_id_box" name="query_actress_id">
+      </div>
+
+      <div>
+        <label for="s_actor_id_box">
+          S actor
+        </label>
+
+        <input type="text" id="s_actor_id_box" name="query_s_actor_id">
+      </div>
+
+      <div>
+        <label for="s_actress_id_box">
+          S actress
+        </label>
+
+        <input type="text" id="s_actress_id_box" name="query_s_actress_id">
+      </div>
+
+      <div>
+        <label for="director_id_box">
+          Director
+        </label>
+
+        <input type="text" id="director_id_box" name="query_director_id">
+      </div>
+
+      <div>
+        <label for="o_screenplay_id_box">
+          O screenplay
+        </label>
+
+        <input type="text" id="o_screenplay_id_box" name="query_o_screenplay_id">
+      </div>
+
+      <div>
+        <label for="a_screenplay_id_box">
+          A screenplay
+        </label>
+
+        <input type="text" id="a_screenplay_id_box" name="query_a_screenplay_id">
+      </div>
+
+      <div>
+        <label for="picture_id_box">
+          Picture
+        </label>
+
+        <input type="text" id="picture_id_box" name="query_picture_id">
+      </div>
+
+      <button>
+        Create ballot
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table>
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Ceremony year
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Actor
+        </th>
+
+        <th>
+          Actress
+        </th>
+
+        <th>
+          S actor
+        </th>
+
+        <th>
+          S actress
+        </th>
+
+        <th>
+          Director
+        </th>
+
+        <th>
+          O screenplay
+        </th>
+
+        <th>
+          A screenplay
+        </th>
+
+        <th>
+          Picture
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_ballots.each do |a_ballot| %>
+      <tr>
+        <td>
+          <%= a_ballot.id %>
+        </td>
+
+        <td>
+          <%= a_ballot.ceremony_year %>
+        </td>
+
+        <td>
+          <%= a_ballot.user_id %>
+        </td>
+
+        <td>
+          <%= a_ballot.actor_id %>
+        </td>
+
+        <td>
+          <%= a_ballot.actress_id %>
+        </td>
+
+        <td>
+          <%= a_ballot.s_actor_id %>
+        </td>
+
+        <td>
+          <%= a_ballot.s_actress_id %>
+        </td>
+
+        <td>
+          <%= a_ballot.director_id %>
+        </td>
+
+        <td>
+          <%= a_ballot.o_screenplay_id %>
+        </td>
+
+        <td>
+          <%= a_ballot.a_screenplay_id %>
+        </td>
+
+        <td>
+          <%= a_ballot.picture_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_ballot.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_ballot.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/ballots/<%= a_ballot.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>

@@ -42,7 +42,7 @@ class UserAuthenticationController < ApplicationController
     @user.password = params.fetch("query_password")
     @user.password_confirmation = params.fetch("query_password_confirmation")
     @user.username = params.fetch("query_username")
-    @user.ballots_count = params.fetch("query_ballots_count")
+#    @user.ballots_count = params.fetch("query_ballots_count")
 
     save_status = @user.save
 

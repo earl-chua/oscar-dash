@@ -11,11 +11,13 @@
         </a>
       </div>
 
+      <% if @the_ballot.user_id == session[:user_id] %>
       <div>
         <a href="/delete_ballot/<%= @the_ballot.id %>">
           Delete ballot
         </a>
       </div>
+      <% end %>
     </div>
 
       <table>

@@ -36,7 +36,7 @@ Rails.application.routes.draw do
           
   # READ
   get("/ballots", { :controller => "ballots", :action => "index" })
-  
+  get("/ballots_all", { :controller => "ballots", :action => "full" })
   get("/ballots/:path_id", { :controller => "ballots", :action => "show" })
   
   # UPDATE

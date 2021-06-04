@@ -9,7 +9,7 @@ this is to add some structure, and one way to add structure is to look at some s
 Strategies vary from simply tracking other awards shows to looking at analytical models, and this application is a way to see how well you would've done
  retroactively, year on year. At this current iteration, you get to see how the strategies have performed. Future iterations could include leaderboards, where users
  submit their predictions <i>before</i> the Oscars and get evaluated after the fact. In putting this together, hopefully users gain a better sense of how 
- awards voters make their picks, and will stop being shocked at otherwise-"predictable" results. 
+ awards voters make their picks, do better in their Oscar pools, and stop being shocked at otherwise-"predictable" results. 
 
 ## Current Functionality
 

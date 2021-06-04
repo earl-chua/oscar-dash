@@ -19,16 +19,16 @@
 class Ballot < ApplicationRecord
   belongs_to(:user, { :required => false, :class_name => "User", :foreign_key => "user_id", :counter_cache => true })
   belongs_to(:actor, { :required => false, :class_name => "Nominee", :foreign_key => "actor_id", :counter_cache => true })
-  belongs_to(:actor, { :required => false, :class_name => "Nominee", :foreign_key => "actress_id", :counter_cache => true })
-  belongs_to(:actor, { :required => false, :class_name => "Nominee", :foreign_key => "s_actor_id", :counter_cache => true })
-  belongs_to(:actor, { :required => false, :class_name => "Nominee", :foreign_key => "s_actress_id", :counter_cache => true })
-  belongs_to(:actor, { :required => false, :class_name => "Nominee", :foreign_key => "director", :counter_cache => true })
-  belongs_to(:actor, { :required => false, :class_name => "Nominee", :foreign_key => "o_screenplay_id", :counter_cache => true })
-  belongs_to(:actor, { :required => false, :class_name => "Nominee", :foreign_key => "a_screenplay_id", :counter_cache => true })
-  belongs_to(:actor, { :required => false, :class_name => "Nominee", :foreign_key => "picture_id", :counter_cache => true })
+  belongs_to(:actress, { :required => false, :class_name => "Nominee", :foreign_key => "actress_id", :counter_cache => true })
+  belongs_to(:s_actor, { :required => false, :class_name => "Nominee", :foreign_key => "s_actor_id", :counter_cache => true })
+  belongs_to(:s_actress, { :required => false, :class_name => "Nominee", :foreign_key => "s_actress_id", :counter_cache => true })
+  belongs_to(:director, { :required => false, :class_name => "Nominee", :foreign_key => "director", :counter_cache => true })
+  belongs_to(:o_screenplay, { :required => false, :class_name => "Nominee", :foreign_key => "o_screenplay_id", :counter_cache => true })
+  belongs_to(:a_screenplay, { :required => false, :class_name => "Nominee", :foreign_key => "a_screenplay_id", :counter_cache => true })
+  belongs_to(:picture, { :required => false, :class_name => "Nominee", :foreign_key => "picture_id", :counter_cache => true })
 
 def username
-
+  
 end
 
 def score

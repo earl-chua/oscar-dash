@@ -18,91 +18,120 @@
       </div>
     </div>
 
-    <dl>
-      <dt>
-        Ceremony year
-      </dt>
-      <dd>
-        <%= @the_ballot.ceremony_year %>
-      </dd>
+      <table>
+        <tr>
+          <td>
+            <label for="ceremony_year_box">
+              <b>Ceremony Year</b>
+            </label>
+          </td>
+          <td>
+            <%= @the_ballot.ceremony_year %>
+          </td>
+        </tr>  
 
-      <dt>
-        User
-      </dt>
-      <dd>
-        <%= @the_ballot.user_id %>
-      </dd>
+        <tr>
+          <td>
+            <label for="user_id_box">
+              <b>User</b>
+            </label>
+          </td>
+          <td>
+            <%= @the_ballot.user_id %>
+          </td>
+        </tr>  
 
-      <dt>
-        Actor
-      </dt>
-      <dd>
-        <%= @the_ballot.actor_id %>
-      </dd>
+        <tr>
+          <td>
+              <b>Best Actor</b>
+          </td>
+          <td>
+              <%= @the_ballot.actor_id %>
+          </td>
+        </tr> 
 
-      <dt>
-        Actress
-      </dt>
-      <dd>
-        <%= @the_ballot.actress_id %>
-      </dd>
+        <tr>
+          <td>
+              <b>Best Actress</b>
+          </td>
+          <td>
+              <%= @the_ballot.actress_id %>
+          </td>
+        </tr> 
 
-      <dt>
-        S actor
-      </dt>
-      <dd>
-        <%= @the_ballot.s_actor_id %>
-      </dd>
+        <tr>
+          <td>
+              <b>Best Supporting Actor</b>
+          </td>
+          <td>
+              <%= @the_ballot.s_actor_id %>
+          </td>
+        </tr> 
 
-      <dt>
-        S actress
-      </dt>
-      <dd>
-        <%= @the_ballot.s_actress_id %>
-      </dd>
+        <tr>
+          <td>
+              <b>Best Supporting Actress</b>
+          </td>
+          <td>
+              <%= @the_ballot.s_actress_id %>
+          </td>
+        </tr> 
 
-      <dt>
-        Director
-      </dt>
-      <dd>
-        <%= @the_ballot.director_id %>
-      </dd>
+        <tr>
+          <td>
+              <b>Best Director</b>
+          </td>
+          <td>
+              <%= @the_ballot.director_id %>
+          </td>
+        </tr>       
 
-      <dt>
-        O screenplay
-      </dt>
-      <dd>
-        <%= @the_ballot.o_screenplay_id %>
-      </dd>
+        <tr>
+          <td>
+              <b>Best Original Screenplay</b>
+          </td>
+          <td>
+              <%= @the_ballot.o_screenplay_id %>
+          </td>
+        </tr>         
 
-      <dt>
-        A screenplay
-      </dt>
-      <dd>
-        <%= @the_ballot.a_screenplay_id %>
-      </dd>
+        <tr>
+          <td>
+              <b>Best Adapted Screenplay</b>
+          </td>
+          <td>
+              <%= @the_ballot.a_screenplay_id %>
+          </td>
+        </tr>   
 
-      <dt>
-        Picture
-      </dt>
-      <dd>
-        <%= @the_ballot.picture_id %>
-      </dd>
+        <tr>
+          <td>
+            <b>Best Picture</b>
+          </td>
+          <td>
+            <%= @the_ballot.picture_id %>                          
+          </td>
+        </tr>
 
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_ballot.created_at) %> ago
-      </dd>
+        <tr>
+          <td>
+            <b>Created at</b>
+          </td>
+          <td>
+            <%= time_ago_in_words(@the_ballot.created_at) %> ago
+          </td>
+        </tr>        
 
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_ballot.updated_at) %> ago
-      </dd>
-    </dl>
+        <tr>
+          <td>
+            <b>Updated at</b>
+          </td>
+          <td>
+            <%= time_ago_in_words(@the_ballot.updated_at) %> ago
+          </td>
+        </tr>
+      </table>
+
   </div>
 </div>
 

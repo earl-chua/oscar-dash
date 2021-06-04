@@ -28,11 +28,53 @@ class Ballot < ApplicationRecord
   belongs_to(:picture, { :required => false, :class_name => "Nominee", :foreign_key => "picture_id", :counter_cache => true })
 
 def username
-  
+  name = User.where({ :id => self.user_id }).first.username  
+  return name
+end
+
+def best_actor
+   name = Nominee.where({ :id => self.actor_id }).first.nom_name
+end
+
+def best_actress
+   name = Nominee.where({ :id => self.actress_id }).first.nom_name
+end
+
+def best_s_actor
+   name = Nominee.where({ :id => self.s_actor_id }).first.nom_name
+end
+
+def best_s_actress
+   name = Nominee.where({ :id => self.s_actress_id }).first.nom_name
+end
+
+def best_director
+   name = Nominee.where({ :id => self.director_id }).first.nom_name
+end
+
+def best_o_screenplay
+   name = Nominee.where({ :id => self.o_screenplay_id }).first.nom_name
+end
+
+def best_a_screenplay
+   name = Nominee.where({ :id => self.a_screenplay_id }).first.nom_name
+end
+
+def best_picture
+   name = Nominee.where({ :id => self.picture_id }).first.nom_name
 end
 
 def score
-   
+  tot = Array.new
+  tot.push(Nominee.where({ :id => self.actor_id }).first.winner)
+  tot.push(Nominee.where({ :id => self.actress_id }).first.winner)
+  tot.push(Nominee.where({ :id => self.s_actor_id }).first.winner)
+  tot.push(Nominee.where({ :id => self.s_actress_id }).first.winner)
+  tot.push(Nominee.where({ :id => self.director_id }).first.winner)
+  tot.push(Nominee.where({ :id => self.o_screenplay_id }).first.winner)
+  tot.push(Nominee.where({ :id => self.a_screenplay_id }).first.winner)
+  tot.push(Nominee.where({ :id => self.picture_id }).first.winner)
+  return tot.count(true)/8.0
 end
 
 end

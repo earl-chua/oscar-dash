@@ -1,10 +1,18 @@
 class BallotsController < ApplicationController
   def index
-    matching_ballots = Ballot.all
+    matching_ballots = Ballot.where({ :user_id => session[:user_id] })
 
     @list_of_ballots = matching_ballots.order({ :created_at => :desc })
 
     render({ :template => "ballots/index.html.erb" })
+  end
+
+  def universe
+    matching_ballots = Ballot.all
+
+    @list_of_ballots = matching_ballots.order({ :created_at => :desc })
+
+    render({ :template => "ballots/universe.html.erb" })    
   end
 
   def show

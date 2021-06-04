@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Your Ballots
+      All Ballots
     </h1>
   </div>
 </div>
@@ -9,7 +9,6 @@
 
 <hr>
 
-<% if session[:user_id] %>
 
 <div>
   <div>
@@ -25,11 +24,11 @@
         </th>
 
         <th>
-          Accuracy
+          Created at
         </th>
 
         <th>
-          Created at
+          Updated at
         </th>
 
         <th>
@@ -38,7 +37,6 @@
 
       <% @list_of_ballots.each do |a_ballot| %>
       <tr>
-
 
         <td>
           <%= a_ballot.ceremony_year %>
@@ -49,11 +47,10 @@
         </td>
 
         <td>
-          <%= a_ballot.score %>
-        </td>
-
-        <td>
           <%= time_ago_in_words(a_ballot.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_ballot.updated_at) %> ago
         </td>
 
         <td>
@@ -67,10 +64,5 @@
   </div>
 </div>
 
-<% else %>
-
-<h2> Sign in to see your ballots.</h2>
-
-<% end %>
 
 <hr>

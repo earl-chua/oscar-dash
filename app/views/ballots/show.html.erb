@@ -20,6 +20,9 @@
       <% end %>
     </div>
 
+    <br>
+    <br>
+
       <table>
         <tr>
           <td>
@@ -138,3 +141,78 @@
 </div>
 
 <hr>
+
+<h2> Metrics </h2>
+
+<table>
+  <tr>
+    <th> </th>
+    <th> Accuracy</th>
+  </tr>
+
+  <tr>
+    <td> User </td>
+    <td> <%= "#{(@the_ballot.score * 100)}%" %> </td>
+  </tr>
+
+  <% ous1 = User.where({ :username => "GoldenGlobes_Drama" }).first.id %>
+  <% obl1 = Ballot.where({ :user_id => ous1, :ceremony_year => @the_ballot.ceremony_year }).first  %>
+
+  <% if obl1 %>
+  <tr>
+    <td> Golden Globes (Drama bias) </td>
+    <td> <%= "#{(obl1.score * 100)}%" %> </td>
+  </tr>
+  <% end %>
+
+  <% ous2 = User.where({ :username => "GoldenGlobes_ComMus" }).first.id %>
+  <% obl2 = Ballot.where({ :user_id => ous2, :ceremony_year => @the_ballot.ceremony_year  }).first  %>
+
+  <% if obl2 %>
+  <tr>
+    <td> Golden Globes (Comedy/Musical bias) </td>
+    <td> <%= "#{(obl2.score * 100)}%" %> </td>
+  </tr>
+  <% end %>
+
+  <% ous3 = User.where({ :username => "BAFTA" }).first.id %>
+  <% obl3 = Ballot.where({ :user_id => ous3, :ceremony_year => @the_ballot.ceremony_year  }).first  %>
+
+  <% if obl3 %>
+  <tr>
+    <td> BAFTAs </td>
+    <td> <%= "#{(obl3.score * 100)}%" %> </td>
+  </tr>
+  <% end %>
+  
+  <% ous4 = User.where({ :username => "Guilds" }).first.id %>
+  <% obl4 = Ballot.where({ :user_id => ous4, :ceremony_year => @the_ballot.ceremony_year  }).first  %>
+
+  <% if obl4 %>
+  <tr>
+    <td> Guilds</td>
+    <td> <%= "#{(obl4.score * 100)}%" %> </td>
+  </tr>
+  <% end %>
+
+  <% ous5 = User.where({ :username => "Odds" }).first.id %>
+  <% obl5 = Ballot.where({ :user_id => ous5, :ceremony_year => @the_ballot.ceremony_year  }).first  %>
+
+  <% if obl5 %>
+  <tr>
+    <td> Odds </td>
+    <td> <%= "#{(obl5.score * 100)}%" %> </td>
+  </tr>
+  <% end %>
+
+  <% ous6 = User.where({ :username => "Oscarmetrics" }).first.id %>
+  <% obl6 = Ballot.where({ :user_id => ous6, :ceremony_year => @the_ballot.ceremony_year  }).first  %>
+  
+  <% if obl6 %>
+  <tr>
+    <td> Oscarmetrics </td>
+    <td> <%= "#{(obl6.score * 100)}%" %> </td>
+  </tr>
+  <% end %>
+
+</table>

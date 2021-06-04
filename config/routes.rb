@@ -31,6 +31,8 @@ Rails.application.routes.draw do
 
   # CREATE
   post("/insert_ballot", { :controller => "ballots", :action => "create" })
+
+  post("/fill_ballot", { :controller => "ballots", :action => "complete" })
           
   # READ
   get("/ballots", { :controller => "ballots", :action => "index" })

@@ -17,6 +17,11 @@ class BallotsController < ApplicationController
     render({ :template => "ballots/show.html.erb" })
   end
 
+  def complete
+    @the_year = params.fetch("query_ceremony_year")
+    render({ :template => "ballots/main.html.erb" })
+  end
+
   def create
     the_ballot = Ballot.new
     the_ballot.ceremony_year = params.fetch("query_ceremony_year")

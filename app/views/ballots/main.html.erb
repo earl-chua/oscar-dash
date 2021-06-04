@@ -1,0 +1,175 @@
+<hr>
+
+<h1> Oscar Ballot - <%= @the_year %> </h1>
+
+<% if session[:user_id] %>
+
+<div>
+  <div>
+    <h2>
+      Create a Ballot
+    </h2>
+
+    <% noms = Nominee.where({ :ceremony_year => @the_year }) %>
+
+    <form action="/insert_ballot" method="post">
+      <table>
+        <tr>
+          <td>
+            <label for="ceremony_year_box">
+              <b>Ceremony Year</b>
+            </label>
+          </td>
+          <td>
+            <input id="ceremony_year_box" name="query_ceremony_year" value=<%= @the_year %> readonly>
+          </td>
+        </tr>  
+
+        <tr>
+          <td>
+            <label for="user_id_box">
+              <b>User</b>
+            </label>
+          </td>
+          <td>
+            <%= User.where({:id => session[:user_id]}).first.username %>
+          </td>
+        </tr>  
+
+        <tr>
+          <td>
+            <label for="actor_id_box">
+              <b>Best Actor</b>
+            </label>
+          </td>
+          <td>
+            <select type="text" id="actor_id_box" name="query_actor_id">
+              <% nominees = noms.where({:category => "ACTOR IN A LEADING ROLE"}) %>
+              <% nominees.each do |nominee| %>
+                <option value="<%= nominee.id %>"><%= nominee.nom_name %></option>
+              <% end %>
+            </select>
+          </td>
+        </tr> 
+
+        <tr>
+          <td>
+            <label for="actress_id_box">
+              <b>Best Actress</b>
+            </label>
+          </td>
+          <td>
+            <select type="text" id="actress_id_box" name="query_actress_id">
+              <% nominees = noms.where({:category => "ACTRESS IN A LEADING ROLE"}) %>
+              <% nominees.each do |nominee| %>
+                <option value="<%= nominee.id %>"><%= nominee.nom_name %></option>
+              <% end %>
+            </select>            
+          </td>
+        </tr> 
+
+        <tr>
+          <td>
+            <label for="s_actor_id_box">
+              <b>Best Supporting Actor</b>
+            </label>
+          </td>
+          <td>
+            <select type="text" id="s_actor_id_box" name="query_s_actor_id">
+              <% nominees = noms.where({:category => "ACTOR IN A SUPPORTING ROLE"}) %>
+              <% nominees.each do |nominee| %>
+                <option value="<%= nominee.id %>"><%= nominee.nom_name %></option>
+              <% end %>
+            </select>                 
+          </td>
+        </tr> 
+
+        <tr>
+          <td>
+            <label for="s_actress_id_box">
+              <b>Best Supporting Actress</b>
+            </label>
+          </td>
+          <td>
+            <select type="text" id="s_actress_id_box" name="query_s_actress_id">
+              <% nominees = noms.where({:category => "ACTRESS IN A SUPPORTING ROLE"}) %>
+              <% nominees.each do |nominee| %>
+                <option value="<%= nominee.id %>"><%= nominee.nom_name %></option>
+              <% end %>
+            </select>               
+          </td>
+        </tr> 
+
+        <tr>
+          <td>
+            <label for="director_id_box">
+              <b>Best Direcctor</b>
+            </label>
+          </td>
+          <td>
+            <select type="text" id="director_id_box" name="query_director_id">
+              <% nominees = noms.where({:category => "DIRECTING"}) %>
+              <% nominees.each do |nominee| %>
+                <option value="<%= nominee.id %>"><%= nominee.nom_name %></option>
+              <% end %> 
+            </select>           
+          </td>
+        </tr>       
+
+        <tr>
+          <td>
+            <label for="o_screenplay_id_box">
+              <b>Best Original Screenplay</b>
+            </label>
+          </td>
+          <td>
+            <select type="text" id="o_screenplay_id_box" name="query_o_screenplay_id">
+              <% nominees = noms.where({:category => "WRITING (Original Screenplay)"}) %>
+              <% nominees.each do |nominee| %>
+                <option value="<%= nominee.id %>"><%= nominee.nom_name %></option>
+              <% end %> 
+            </select>                
+          </td>
+        </tr>         
+
+        <tr>
+          <td>
+            <label for="a_screenplay_id_box">
+              <b>Best Adapted Screenplay</b>
+            </label>
+          </td>
+          <td>
+             <select type="text" id="a_screenplay_id_box" name="query_a_screenplay_id">
+              <% nominees = noms.where({:category => "WRITING (Adapted Screenplay)"}) %>
+              <% nominees.each do |nominee| %>
+                <option value="<%= nominee.id %>"><%= nominee.nom_name %></option>
+              <% end %> 
+            </select>              
+          </td>
+        </tr>   
+
+        <tr>
+          <td>
+            <label for="picture_id_box">
+              <b>Best Picture</b>
+            </label>
+          </td>
+          <td>
+             <select type="text" id="picture_id_box" name="query_picture_id">
+              <% nominees = noms.where({:category => "BEST PICTURE"}) %>
+              <% nominees.each do |nominee| %>
+                <option value="<%= nominee.id %>"><%= nominee.nom_name %></option>
+              <% end %> 
+            </select>                
+          </td>
+        </tr>    
+      </table>
+
+      <button>
+        Vote!
+      </button>
+    </form>
+  </div>
+</div>
+
+<% end %>

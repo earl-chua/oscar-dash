@@ -6,111 +6,11 @@
   </div>
 </div>
 
+
 <hr>
 
 <% if session[:user_id] %>
 
-<div>
-  <div>
-    <h2>
-      Add a new ballot
-    </h2>
-
-    <form action="/insert_ballot" method="post">
-      <div>
-        <label for="ceremony_year_box">
-          <b>Ceremony Year</b>
-        </label>
-
-        <select type="integer" id="ceremony_year_box" name="query_ceremony_year">
-          <% year = 2003 %>
-          <% while year <= Nominee.maximum("ceremony_year") %>
-            <option value="<%= year %>"><%= year %></option>
-            <% year = year+1 %>
-          <% end %>
-        </select>
-      </div>
-
-      <div>
-        <label for="user_id_box">
-          <b>User</b>
-        </label>
-
-        <%= User.where({:id => session[:user_id]}).first.username %>
-      </div>
-
-      <div>
-        <label for="actor_id_box">
-          <b>Best Actor</b>
-        </label>
-
-        <input type="text" id="actor_id_box" name="query_actor_id">
-      </div>
-
-      <div>
-        <label for="actress_id_box">
-          <b>Best Actress</b>
-        </label>
-
-        <input type="text" id="actress_id_box" name="query_actress_id">
-      </div>
-
-      <div>
-        <label for="s_actor_id_box">
-          <b>Best Supporting Actor</b>
-        </label>
-
-        <input type="text" id="s_actor_id_box" name="query_s_actor_id">
-      </div>
-
-      <div>
-        <label for="s_actress_id_box">
-          <b>Best Supporting Actress</b>
-        </label>
-
-        <input type="text" id="s_actress_id_box" name="query_s_actress_id">
-      </div>
-
-      <div>
-        <label for="director_id_box">
-          <b>Best Director</b>
-        </label>
-
-        <input type="text" id="director_id_box" name="query_director_id">
-      </div>
-
-      <div>
-        <label for="o_screenplay_id_box">
-          <b>Best Original Screenplay</b>
-        </label>
-
-        <input type="text" id="o_screenplay_id_box" name="query_o_screenplay_id">
-      </div>
-
-      <div>
-        <label for="a_screenplay_id_box">
-          <b>Best Adapted Screenplay</b>
-        </label>
-
-        <input type="text" id="a_screenplay_id_box" name="query_a_screenplay_id">
-      </div>
-
-      <div>
-        <label for="picture_id_box">
-          <b>Best Picture</b>
-        </label>
-
-        <input type="text" id="picture_id_box" name="query_picture_id">
-      </div>
-
-      <button>
-        Vote!
-      </button>
-    </form>
-  </div>
-</div>
-
-<hr>
 <div>
   <div>
     <table>

@@ -17,3 +17,37 @@ In the modern <a href="https://www.oscars.org/">Academy Awards</a>, the "Big Eig
 </ul>
 
 <p>This application will show you how your ballots would have fared against against well-known models and strategies.</p>
+
+<hr>
+
+<% if session[:user_id] %>
+
+<div>
+  <div>
+    <h2>
+      Create a Ballot
+    </h2>
+
+    <form action="/fill_ballot" method="post">
+      <div>
+        <label for="ceremony_year_box">
+          <b>Ceremony Year</b>
+        </label>
+
+        <select type="integer" id="ceremony_year_box" name="query_ceremony_year">
+          <% year = 2003 %>
+          <% while year <= Nominee.maximum("ceremony_year") %>
+            <option value="<%= year %>"><%= year %></option>
+            <% year = year+1 %>
+          <% end %>
+        </select>
+      </div>
+
+      <button>
+        Choose your year
+      </button>
+    </form>
+  </div>
+</div>
+
+<% end %>

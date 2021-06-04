@@ -14,5 +14,5 @@
 class Nominee < ApplicationRecord
   has_many(:ballots, { :class_name => "Ballot", :foreign_key => "actor_id", :dependent => :destroy })
 
-  
+
 end

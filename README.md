@@ -1,8 +1,8 @@
-# Academy Award Big Eight Prediction Dashboard
+# Academy Award Big Eight Ballot Dashboard
 
 ## About the Application
 
-How do you predict the Oscars? There is plenty of information available beforehand, but it's hard to organize them together (not as hard as an NCAA bracket).
+How do you predict the Academy Awards? There is plenty of information available beforehand, but it's hard to organize them together (not as hard as an NCAA bracket).
 Most ballots rely on hunches, can be susceptible to recency bias (<i>"They won the BAFTAs so..."</i>), and may boil down to a form of wishcasting. A way to correct
 this is to add some structure, and one way to add structure is to look at some strategies people use to fill up their ballots.
 
@@ -24,6 +24,7 @@ In order to keep track of predictions, a user must sign in to submit a ballot an
  1. Shore up the category lists to account for name changes.
  1. Trickle in the other categories.
  1. Category-level and aggregate analysis.
+ 1. A form for future Oscar ceremonies: users submit before the ceremony, then get evaluated after it.
 
 ## Standard Workflow
 

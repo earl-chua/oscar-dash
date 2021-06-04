@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
     render({ :template => "home/strategies.html.erb" })
   end
 
+  def analyze
+    render({ :template => "home/analysis.html.erb" })
+  end
+
   def predict
     render({ :template => "home/predict.html.erb" })
   end

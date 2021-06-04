@@ -1,0 +1,69 @@
+<hr>
+
+<h1> Analysis of Ballot Strategies </h1>
+ 
+<h2> Golden Globes </h2>
+<% strat_uid = User.where({ :username => "GoldenGlobes_Drama" }).first.id %>
+<% strat_ballot = Ballot.where({ :user_id => strat_uid }) %>
+<% scores = Array.new %>
+<% strat_ballot.each do |a_ballot| %>
+<% scores.push(a_ballot.score) %>
+<% end %>
+<% acc = scores.sum / scores.size %>
+
+<p> The Golden Globes strategy with a bias on drama is historically <%= "#{(acc * 100).round(2)}%" %> accurate.</p>
+
+<% strat_uid = User.where({ :username => "GoldenGlobes_ComMus" }).first.id %>
+<% strat_ballot = Ballot.where({ :user_id => strat_uid }) %>
+<% scores = Array.new %>
+<% strat_ballot.each do |a_ballot| %>
+<% scores.push(a_ballot.score) %>
+<% end %>
+<% acc = scores.sum / scores.size %>
+
+<p> The Golden Globes strategy with a bias on comedy/musicals is historically <%= "#{(acc * 100).round(2)}%" %> accurate.</p>
+
+
+<h2> BAFTAs </h2>
+<% strat_uid = User.where({ :username => "BAFTA" }).first.id %>
+<% strat_ballot = Ballot.where({ :user_id => strat_uid }) %>
+<% scores = Array.new %>
+<% strat_ballot.each do |a_ballot| %>
+<% scores.push(a_ballot.score) %>
+<% end %>
+<% acc = scores.sum / scores.size %>
+
+<p> The BAFTAs strategy is historically <%= "#{(acc * 100).round(2)}%" %> accurate.</p>
+
+<h2> Guilds </h2>
+<% strat_uid = User.where({ :username => "Guilds" }).first.id %>
+<% strat_ballot = Ballot.where({ :user_id => strat_uid }) %>
+<% scores = Array.new %>
+<% strat_ballot.each do |a_ballot| %>
+<% scores.push(a_ballot.score) %>
+<% end %>
+<% acc = scores.sum / scores.size %>
+
+<p> The Guilds strategy is historically <%= "#{(acc * 100).round(2)}%" %> accurate.</p>
+
+<h2> Odds </h2>
+<% strat_uid = User.where({ :username => "Odds" }).first.id %>
+<% strat_ballot = Ballot.where({ :user_id => strat_uid }) %>
+<% scores = Array.new %>
+<% strat_ballot.each do |a_ballot| %>
+<% scores.push(a_ballot.score) %>
+<% end %>
+<% acc = scores.sum / scores.size %>
+
+<p> The Odds strategy is historically <%= "#{(acc * 100).round(2)}%" %> accurate.</p>
+
+<h2> Oscarmetrics </h2>
+<% strat_uid = User.where({ :username => "Oscarmetrics" }).first.id %>
+<% strat_ballot = Ballot.where({ :user_id => strat_uid }) %>
+<% scores = Array.new %>
+<% strat_ballot.each do |a_ballot| %>
+<% scores.push(a_ballot.score) %>
+<% end %>
+<% acc = scores.sum / scores.size %>
+
+<p> Oscarmetrics is historically <%= "#{(acc * 100).round(2)}%" %> accurate.</p>

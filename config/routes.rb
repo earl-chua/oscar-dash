@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get("/", { :controller => "application", :action => "index" })
   get("/strategies", { :controller => "application", :action => "strategies" })
   get("/predict", { :controller => "application", :action => "predict" })
+  get("/analysis", { :controller => "application", :action => "analyze" })
 
   #------------------------------
 

@@ -20,7 +20,8 @@ In order to keep track of predictions, a user must sign in to submit a ballot an
 ## Future Improvements
 
  1. More details on the nominees.
- 1. Put in more strategies.
+ 1. More strategies.
+ 1. Other ways to evaluate performance, taking into account implied probabilities.
  1. Shore up the category lists to account for name changes.
  1. Trickle in the other categories.
  1. Category-level and aggregate analysis.
@@ -30,4 +31,4 @@ In order to keep track of predictions, a user must sign in to submit a ballot an
 
  1. Start the web server by running `bin/server`.
  1. Navigate to your live application.
- 1. As you work, remember to navigate to `/git` and **commit often as you work.**
+ 1. There is an existing username `admin` with password `admin` worth looking at, if you want to dig deeper.

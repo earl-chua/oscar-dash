@@ -7,7 +7,7 @@ class UserAuthenticationController < ApplicationController
   end
 
   def create_cookie
-    user = User.where({ :email => params.fetch("query_email") }).first
+    user = User.where({ :username => params.fetch("query_username") }).first
     
     the_supplied_password = params.fetch("query_password")
     

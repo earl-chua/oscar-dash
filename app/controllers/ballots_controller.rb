@@ -20,7 +20,7 @@ class BallotsController < ApplicationController
   def create
     the_ballot = Ballot.new
     the_ballot.ceremony_year = params.fetch("query_ceremony_year")
-    the_ballot.user_id = params.fetch("query_user_id")
+    the_ballot.user_id = session[:user_id]
     the_ballot.actor_id = params.fetch("query_actor_id")
     the_ballot.actress_id = params.fetch("query_actress_id")
     the_ballot.s_actor_id = params.fetch("query_s_actor_id")

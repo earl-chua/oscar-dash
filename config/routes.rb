@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get("/", { :controller => "application", :action => "index" })
   get("/strategies", { :controller => "application", :action => "strategies" })
 
+  #------------------------------
+
   # Routes for the Nominee resource:
 
   # CREATE

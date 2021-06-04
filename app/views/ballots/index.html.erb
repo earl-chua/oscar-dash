@@ -1,12 +1,14 @@
 <div>
   <div>
     <h1>
-      List of all ballots
+      Your Ballots
     </h1>
   </div>
 </div>
 
 <hr>
+
+<% if session[:user_id] %>
 
 <div>
   <div>
@@ -17,23 +19,29 @@
     <form action="/insert_ballot" method="post">
       <div>
         <label for="ceremony_year_box">
-          Ceremony Year
+          <b>Ceremony Year</b>
         </label>
 
-        <input type="datetime-local" id="ceremony_year_box" name="query_ceremony_year">
+        <select type="integer" id="ceremony_year_box" name="query_ceremony_year">
+          <% year = 2003 %>
+          <% while year <= Nominee.maximum("ceremony_year") %>
+            <option value="<%= year %>"><%= year %></option>
+            <% year = year+1 %>
+          <% end %>
+        </select>
       </div>
 
       <div>
         <label for="user_id_box">
-          User
+          <b>User</b>
         </label>
 
-        <input type="text" id="user_id_box" name="query_user_id">
+        <%= User.where({:id => session[:user_id]}).first.username %>
       </div>
 
       <div>
         <label for="actor_id_box">
-          Best Actor
+          <b>Best Actor</b>
         </label>
 
         <input type="text" id="actor_id_box" name="query_actor_id">
@@ -41,7 +49,7 @@
 
       <div>
         <label for="actress_id_box">
-          Best Actress
+          <b>Best Actress</b>
         </label>
 
         <input type="text" id="actress_id_box" name="query_actress_id">
@@ -49,7 +57,7 @@
 
       <div>
         <label for="s_actor_id_box">
-          Best Supporting Actor
+          <b>Best Supporting Actor</b>
         </label>
 
         <input type="text" id="s_actor_id_box" name="query_s_actor_id">
@@ -57,7 +65,7 @@
 
       <div>
         <label for="s_actress_id_box">
-          Best Supporting Actress
+          <b>Best Supporting Actress</b>
         </label>
 
         <input type="text" id="s_actress_id_box" name="query_s_actress_id">
@@ -65,7 +73,7 @@
 
       <div>
         <label for="director_id_box">
-          Best Director
+          <b>Best Director</b>
         </label>
 
         <input type="text" id="director_id_box" name="query_director_id">
@@ -73,7 +81,7 @@
 
       <div>
         <label for="o_screenplay_id_box">
-          Best Original Screenplay
+          <b>Best Original Screenplay</b>
         </label>
 
         <input type="text" id="o_screenplay_id_box" name="query_o_screenplay_id">
@@ -81,7 +89,7 @@
 
       <div>
         <label for="a_screenplay_id_box">
-          Best Adapted Screenplay
+          <b>Best Adapted Screenplay</b>
         </label>
 
         <input type="text" id="a_screenplay_id_box" name="query_a_screenplay_id">
@@ -89,7 +97,7 @@
 
       <div>
         <label for="picture_id_box">
-          Best Picture
+          <b>Best Picture</b>
         </label>
 
         <input type="text" id="picture_id_box" name="query_picture_id">
@@ -226,5 +234,11 @@
     </table>
   </div>
 </div>
+
+<% else %>
+
+<h2> Sign in to fill up a ballot.</h2>
+
+<% end %>
 
 <hr>

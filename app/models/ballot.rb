@@ -26,4 +26,13 @@ class Ballot < ApplicationRecord
   belongs_to(:actor, { :required => false, :class_name => "Nominee", :foreign_key => "o_screenplay_id", :counter_cache => true })
   belongs_to(:actor, { :required => false, :class_name => "Nominee", :foreign_key => "a_screenplay_id", :counter_cache => true })
   belongs_to(:actor, { :required => false, :class_name => "Nominee", :foreign_key => "picture_id", :counter_cache => true })
+
+def username
+
+end
+
+def score
+   
+end
+
 end

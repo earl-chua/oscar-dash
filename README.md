@@ -13,9 +13,17 @@ Strategies vary from simply tracking other awards shows to looking at analytical
 
 ## Current Functionality
 
-The current version has three pages of interest. One
+The current version has two areas of interest. The first is an overview of Oscar winners and common strategies, as well as their historical track records. The 
+winners go all the way from the first ceremony in 1929. The track records go back to around 2003, when the Big Eight categories are in their current names.
+Some strategies have shorter histories because they're new. It provides the user a look at how much information has been extracted by forecasters 
+in finding out who wins cinema's biggest awards.
 
-In order to keep track of predictions, a user must sign in to submit a ballot and evaluate . At the moment, the ballots are retroactive
+The second is ballot creation. You set the year you want to vote on at the homepage, through which you are redirected to a full ballot. You vote on all
+eight categories, and upon submission, your ballot is recorded. You can see your ballots on the "Your Ballots" page, as well as everyone else's in the 
+"All Ballots" page. In these pages, you can click "Show details" to see what the votes are for, and how they compare to common strategies.
+
+In order to keep track of predictions, a user must sign in to submit a ballot and evaluate . At the moment, the ballots are retroactive and you get to backtest
+ideas you have.
 
 ## Future Improvements
 
@@ -31,4 +39,4 @@ In order to keep track of predictions, a user must sign in to submit a ballot an
 
  1. Start the web server by running `bin/server`.
  1. Navigate to your live application.
- 1. There is an existing username `admin` with password `admin` worth looking at, if you want to dig deeper.
+ 1. There is an existing username `John_Doe` with password `john` worth looking at, if you want to dig deeper.

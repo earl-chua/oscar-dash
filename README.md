@@ -1,4 +1,17 @@
-# Base Rails
+# Academy Award Big Eight Prediction Dashboard
+
+## About the Application
+
+This application is a way 
+
+The strategy comparison is done
+
+## Future Improvements
+
+ 1. More details on the nominees.
+ 1. Put in more strategies.
+ 1. Shore up the category lists to account for name changes.
+ 1. Trickle in the other categories.
 
 ## Standard Workflow
 

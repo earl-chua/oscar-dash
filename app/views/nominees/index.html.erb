@@ -30,8 +30,6 @@
           Winner?
         </th>
 
-        <th>
-        </th>
       </tr>
 
       <% @list_of_nominees.each do |a_nominee| %>
@@ -52,12 +50,6 @@
           <% if a_nominee.winner %>
           <%= "WINNER" %>
           <% end %>
-        </td>
-
-        <td>
-          <a href="/nominees/<%= a_nominee.id %>">
-            Show details
-          </a>
         </td>
       </tr>
       <% end %>

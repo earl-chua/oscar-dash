@@ -2,7 +2,7 @@ class NomineesController < ApplicationController
   def index
     matching_nominees = Nominee.all
 
-    @list_of_nominees = matching_nominees.order({ :created_at => :desc })
+    @list_of_nominees = matching_nominees.order({ :ceremony_year => :desc })
 
     render({ :template => "nominees/index.html.erb" })
   end

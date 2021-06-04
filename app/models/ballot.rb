@@ -3,7 +3,7 @@
 # Table name: ballots
 #
 #  id              :integer          not null, primary key
-#  ceremony_year   :datetime
+#  ceremony_year   :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  a_screenplay_id :integer
